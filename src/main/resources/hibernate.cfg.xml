@@ -17,5 +17,7 @@
         <property name="hibernate.format_sql">true</property>
 
         <mapping class="com.yanwang.entity.Student" />
+        <mapping class="com.yanwang.entity.ClassRoom" />
+        <mapping class="com.yanwang.entity.Address" />
     </session-factory>
 </hibernate-configuration>

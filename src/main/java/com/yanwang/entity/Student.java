@@ -21,17 +21,12 @@ public class Student {
     private Date birthday;
     private String major;
     private Address address;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "cid", referencedColumnName = "id")
+    private ClassRoom classRoom;
 
     public Student() {
 
-    }
-
-    public Student(Integer id, String name, String gender, Date birthday, String major) {
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.major = major;
     }
 
     public Integer getId() {
@@ -81,5 +76,13 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public ClassRoom getClassRoom() {
+        return classRoom;
+    }
+
+    public void setClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
     }
 }
